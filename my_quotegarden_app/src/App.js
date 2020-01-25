@@ -1,24 +1,27 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
-
+import React from "react";
+import "./App.css";
+import QuoteSearcher from "./components/QuoteSearcher";
+import Quote from "./components/Quote";
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <h1>
+        <QuoteSearcher />
+      </h1>
+      <h4>
+        <Quote
+          text="Notice that the stiffest tree is most easily cracked, while the bamboo or willow survives by bending with the wind"
+          author="Bruce Lee"
+        />
+        <Quote
+          text="Give me six hours to chop down a tree and I will spend the first four sharpening the axe."
+          author="Abraham Lincoln"
+        />
+        <Quote
+          text="Good timber does not grow with ease; the stronger the wind, the stronger the trees."
+          author="J. Willard Marriott"
+        />
+      </h4>
     </div>
   );
 }
