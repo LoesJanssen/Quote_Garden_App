@@ -25,6 +25,7 @@ export default class QuoteSearcher extends Component {
   };
 
   render() {
+    console.log();
     return (
       <div>
         <h1> Quotes </h1>
