@@ -32,6 +32,7 @@ export default class QuoteSearcher extends Component {
     return (
       <div>
         <h1> Quotes </h1>
+        <h2>Liked: / Disliked: </h2>
         <div>
           {this.state.fetching ? (
             <h3>Loading...</h3>
