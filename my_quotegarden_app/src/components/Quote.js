@@ -4,11 +4,9 @@ export default class Quote extends Component {
   render() {
     return (
       <div>
-        <h2>
-          {this.props.text}
-          {"By:"}
-          {this.props.author}
-        </h2>
+        <h2>{this.props.text}</h2>
+
+        <h3>By: {this.props.author}</h3>
       </div>
     );
   }

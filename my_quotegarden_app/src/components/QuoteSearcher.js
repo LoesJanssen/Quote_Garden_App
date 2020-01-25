@@ -32,15 +32,23 @@ export default class QuoteSearcher extends Component {
     return (
       <div>
         <h1> Quotes </h1>
-        <ul>
-          {this.state.quotes.map(quote => (
-            <Quote
-              text={quote.quoteText}
-              author={quote.quoteAuthor}
-              key={quote._id}
-            />
-          ))}
-        </ul>
+        <div>
+          {this.state.fetching ? (
+            <h3>Loading...</h3>
+          ) : (
+            <div>
+              <ul>
+                {this.state.quotes.map(quote => (
+                  <Quote
+                    text={quote.quoteText}
+                    author={quote.quoteAuthor}
+                    key={quote._id}
+                  />
+                ))}
+              </ul>
+            </div>
+          )}
+        </div>
       </div>
     );
   }
