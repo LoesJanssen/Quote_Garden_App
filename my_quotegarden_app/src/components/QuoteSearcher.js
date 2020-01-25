@@ -3,10 +3,12 @@ import Quote from "./Quote";
 
 export default class QuoteSearcher extends Component {
   state = {
-    quotes: []
+    quotes: [],
+    fetching: true
   };
 
   componentDidMount() {
+    console.log("fetching data?", this.state.fetching);
     fetch("https://quote-garden.herokuapp.com/quotes/search/tree")
       .then(response => response.json())
       .then(myJson => {
@@ -14,8 +16,10 @@ export default class QuoteSearcher extends Component {
         const treeQuotes = myJson.results;
         console.log(treeQuotes);
         this.setState({
-          quotes: treeQuotes
+          quotes: treeQuotes,
+          fetching: false
         });
+        console.log(this.state);
       });
   }
 
