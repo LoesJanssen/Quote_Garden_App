@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import Quote from "./Quote";
 
 export default class QuoteSearcher extends Component {
   state = {
@@ -25,10 +26,23 @@ export default class QuoteSearcher extends Component {
   };
 
   render() {
-    console.log();
+    // const testQuote = this.state.quotes.map(function(quote) {
+    //   return quote.quoteAuthor;
+    // });
+    // console.log(testQuote);
+
     return (
       <div>
         <h1> Quotes </h1>
+        <ul>
+          {this.state.quotes.map(quote => (
+            <Quote
+              text={quote.quoteText}
+              author={quote.quoteAuthor}
+              key={quote._id}
+            />
+          ))}
+        </ul>
       </div>
     );
   }
